@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - buttom
   - Water
   - UI
   - top
-  - 
+  - unit
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 3857256699
+    locked: 0
   - name: Tilemap
     uniqueID: 801058313
     locked: 0
@@ -50,8 +53,14 @@ TagManager:
   - name: top
     uniqueID: 1959678095
     locked: 0
+  - name: uneyt
+    uniqueID: 1379091155
+    locked: 0
   - name: Player
     uniqueID: 2089941957
+    locked: 0
+  - name: uneyt2
+    uniqueID: 1230699057
     locked: 0
   m_RenderingLayers:
   - Default
