@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4615123558646453380}
   - component: {fileID: 6720232605589301212}
   - component: {fileID: 6191270738798083269}
-  - component: {fileID: 3206410636081195673}
   - component: {fileID: -902957470183938164}
   - component: {fileID: -1626032864035428164}
+  - component: {fileID: -5706112681356895130}
   m_Layer: 7
   m_Name: Ant Gatherer
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1230699057
   m_SortingLayer: 7
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: e40200a814ed42f4481f40cb442d5185, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -115,10 +115,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &6191270738798083269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,10 +135,45 @@ MonoBehaviour:
   depositTarget: {fileID: 0}
   moveSpeed: 3
   stopDist: 0.1
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 320
+  lookAhead: 0.7
+  avoidWeight: 1.4
+  slideWeight: 0.6
   carried: 0
   capacity: 20
---- !u!61 &3206410636081195673
-BoxCollider2D:
+  stuckTime: 0.6
+  nudgeStrength: 0.8
+--- !u!114 &-902957470183938164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057323444091182356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7fe5cc06eb21f4e96ea902ba406420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: -1626032864035428164}
+--- !u!114 &-1626032864035428164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057323444091182356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8223ad050b19c418492dc1a0dcdabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capacity: 20
+  carried: 0
+--- !u!70 &-5706112681356895130
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -172,41 +207,5 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 3.52}
-    newSize: {x: 3.52, y: 3.52}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   m_Size: {x: 3.52, y: 3.52}
-  m_EdgeRadius: 0
---- !u!114 &-902957470183938164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057323444091182356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b7fe5cc06eb21f4e96ea902ba406420, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: -1626032864035428164}
---- !u!114 &-1626032864035428164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057323444091182356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8223ad050b19c418492dc1a0dcdabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capacity: 20
-  carried: 0
+  m_Direction: 0
